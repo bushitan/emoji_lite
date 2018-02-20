@@ -1,0 +1,20 @@
+/* pages/pay/pay.wxss */
+page{
+    text-align: center;
+    background-color: #f3dee8;
+}
+.bg{
+    width: 750rpx;
+    height: 773rpx;
+}
+.bg image{
+    
+    width: 750rpx;
+    height: 773rpx;
+}
+.btn{
+    padding: 30px;
+}
+.delete {
+    text-decoration:line-through;
+}

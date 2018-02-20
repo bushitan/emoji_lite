@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/ztest/ztest",
+    "pages/pay/pay",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ce3c39",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "抢红包，一定要谢谢老板！"
+  }
+}

@@ -1,0 +1,10 @@
+<!--pages/pay/pay.wxml-->
+
+<view class="bg xx_m_t30">
+    <image src='http://img.12xiong.top/emoji_pay_bg.png'  mode='aspectFit'></image>
+</view>
+<view class='btn'>
+    <view class='xx_f_11 xx_f_primary'>VIP会员原价: <label class='delete'>6.66元/30天 </label></view>
+    <!-- <view class='xx_f_9 xx_m_t6'>No.23213</view> -->
+    <button class='xx_m_t6' type='primary' catchtap='clickBoss' disabled='{{isPayIng}}'>仅需0.95元，成为30天会员</button>
+</view>

@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="bg">
+    <image src='http://img.12xiong.top/emoji_index_bg.png'  mode='aspectFit'></image>
+</view>
+<view wx:if="{{isVip}}">
+    <!-- <view class='xx_f_11 xx_m_t8'>VIP会员 </view> -->
+    <view class='xx_f_9 xx_m_t4 vip_no' >会员编号：No.{{uuid}}</view>
+    <view class='xx_f_7 xx_m_t4'>有效日期：即日起至{{vipDeadline}}</view>
+    <button  open-type="contact" session-from="emoji" size='mini' class='xx_m_t4'>
+		联系客服
+	</button>
+</view>
+<view wx:else>
+    <!-- <view class='xx_f_11 xx_m_t8'>您是游客</view> -->
+    <view class='xx_f_9 xx_m_t6'>今日剩余浏览次数：{{clickNum}}</view>
+    <view hidden='{{!isShowPayBtn}}'>
+        <view class='xx_f_7 xx_m_t6'>您是游客，成为会员，无次数限制</view>
+        <button class='xx_m_t6' type='primary' size='mini' catchtap='clickBoss'>成为会员</button>
+        <button  open-type="contact" session-from="emoji" size='mini' class='contact'>
+            联系客服
+        </button>
+    </view>
+</view>
+
+<block wx:for="{{coverList}}">
+    <view class='xx_gride xx_m_t15'>
+        <image catchtap='clickEmoji'  data-image_url="{{item.image_url}}"
+        class='xx_gride__image' src='{{item.image_url + "?imageMogr2/thumbnail/81x81"}}' mode='aspectFit'  ></image>
+    </view>
+</block>
+
+

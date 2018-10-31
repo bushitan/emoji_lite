@@ -1,0 +1,31 @@
+<!--pages/face/face.wxml-->
+
+<view class='pre'>
+    <image src='{{mixResult}}'  mode='aspectFit'  catchtap='chooseImage' ></image>
+</view>
+
+<scroll-view scroll-x="true" class='scroll'>
+    <block wx:for="{{list}}" wx:key="index">
+        <image 
+            class='{{index == templateIndex ? "select":""}}'
+            src='{{item.base64}}' 
+            mode='aspectFit' 
+            catchtap='clickTemplate'
+            data-template_index="{{index}}">
+        </image>
+    </block>
+</scroll-view>
+
+
+
+<ai-make 
+    makeLandmark="{{makeLandmark}}" 
+    width="{{width}}"
+    height="{{height}}"
+></ai-make>
+
+
+<ai-btn
+    catch:clickChoice="chooseImage"
+    catch:clickDown="clickDown"
+></ai-btn>

@@ -1,0 +1,24 @@
+/* pages/face/face.wxss */
+
+.pre{
+    padding: 15px;
+}
+.pre image{
+    width: calc(750rpx - 30px);
+    height: calc(750rpx - 30px);
+    background-color: #eee;
+}
+.scroll {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.scroll image{
+    width:72px;
+    height: 72px;
+    margin: 0 15px;
+    background-color: #eee;
+}
+.select{
+    border: 3px solid #ce3c39;
+}

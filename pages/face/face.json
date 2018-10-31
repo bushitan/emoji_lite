@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "ai-make": "../../components/ai_make/ai_make",
+        "ai-btn": "../../components/ai_btn/ai_btn"
+    }
+}

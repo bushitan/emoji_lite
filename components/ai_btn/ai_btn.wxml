@@ -6,7 +6,9 @@
                 <image src='image.png'/>
             </view>
         </view>
-
+    </view>
+    <view class='shang'>
+        <button catchtap='shang' type='warn' size='mini'  catchtap='clickShang'>打赏0.95</button>
     </view>
 
     <view class='xx_btn_right'>

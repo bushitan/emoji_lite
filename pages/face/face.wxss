@@ -8,17 +8,43 @@
     height: calc(750rpx - 30px);
     background-color: #eee;
 }
+
+.shang{
+    text-align: center;
+}
+
 .scroll {
     width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
+    /* height:90px; */
+    /* overflow: hidden; */
+    display: flex;
+    flex-wrap:wrap;
+    /* justify-content: space-around; */
+    /* white-space: nowrap; */
+}
+.scroll .node{
+    flex-basis: 25%;
+    text-align: center;
 }
 .scroll image{
     width:72px;
     height: 72px;
-    margin: 0 15px;
     background-color: #eee;
+}
+.scroll .des{
+    text-align: center;
+    font-size: 8pt;
+    color: #888;
+    margin-bottom: 10px;
 }
 .select{
     border: 3px solid #ce3c39;
+}
+
+.ad{
+    padding: 0 15px 15px;
+}
+.ad .ndoe{
+    width: 100%;
+    height: 48px;
 }

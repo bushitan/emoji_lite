@@ -1,6 +1,5 @@
 // components/xx_cover_news/xx_cover_news.js
 
-
 var downCanvasID = "downCanvas"
 var canvas
 Component({
@@ -61,6 +60,15 @@ Component({
                 // 1. 绘制图片至canvas
                 canvas.setFillStyle('white')
                 canvas.fillRect(0, 0, _width + this.data.borderSize, _height + this.data.logoHeight)
+
+                wx.saveFile({
+                    tempFilePath: tempImage,
+                    success(res) {
+                        const savedFilePath = res.savedFilePath
+                        console.log("save:",res)
+                    }
+                })
+
                 canvas.drawImage(
                     newVal,
                     this.data.borderSize / 2, //画图要预留边框空白
@@ -135,7 +143,7 @@ Component({
             canvas.setFontSize(11)
             // canvas.fillText('2018.10.17', (_width + _border) / 2 - 30, _height + 30)
             // canvas.drawImage('../../images/qr.jpg', (_width + _border) - 70, _height + 40, 60, 60)
-            canvas.fillText('我在江湖  |  表情袋', 10, _height + 30)
+            canvas.fillText('我在江湖  |  致敬金庸', 10, _height + 30)
             canvas.drawImage('../../images/qr.jpg', (_width + _border) - 70, _height +20, 60, 60)
             // ctx.fillText('MINA', 100, 100)
         },

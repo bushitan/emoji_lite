@@ -4,19 +4,33 @@
     <image src='{{mixResult}}'  mode='aspectFit'  catchtap='chooseImage' ></image>
 </view>
 
-<scroll-view scroll-x="true" class='scroll'>
+<ai-btn
+    catch:clickChoice="chooseImage"
+    catch:clickDown="clickDown"
+    catch:clickShang="shang"
+></ai-btn>
+
+
+<!-- <scroll-view scroll-y="true" class='scroll'> -->
+<view  class='scroll'>
     <block wx:for="{{list}}" wx:key="index">
-        <image 
-            class='{{index == templateIndex ? "select":""}}'
-            src='{{item.base64}}' 
-            mode='aspectFit' 
-            catchtap='clickTemplate'
-            data-template_index="{{index}}">
-        </image>
+        <view class='node'>
+            <image 
+                class='{{index == templateIndex ? "select":""}}'
+                src='{{item.base64}}' 
+                mode='aspectFit' 
+                catchtap='clickTemplate'
+                data-template_index="{{index}}">
+            </image>
+            <view class='des'>{{item.name}}</view>
+        </view>
     </block>
-</scroll-view>
-
-
+</view>
+<!-- </scroll-view> -->
+<view style='height:20px;'></view>
+<view class="ad">
+    <ad unit-id="adunit-abddfd975a7d87c9" class="node" ></ad>
+</view>
 
 <ai-make 
     makeLandmark="{{makeLandmark}}" 
@@ -24,8 +38,3 @@
     height="{{height}}"
 ></ai-make>
 
-
-<ai-btn
-    catch:clickChoice="chooseImage"
-    catch:clickDown="clickDown"
-></ai-btn>

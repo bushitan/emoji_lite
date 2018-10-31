@@ -39,5 +39,10 @@ Component({
     clickDown(e) {
         this.triggerEvent('clickDown');
     },
+    clickShang(e) {
+        this.triggerEvent('clickShang');
+    },
+
+      
   }
 })

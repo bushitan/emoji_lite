@@ -44,7 +44,7 @@ App({
 
     loginRequest(js_code, session, options){
 
-        wx.showLoading({title: '登陆中',})
+        // wx.showLoading({title: '登陆中',})
         wx.request
             ({
                 url: API.USER_LOGIN,
@@ -61,9 +61,9 @@ App({
                 success: function (res) {
                     console.log(res)
                     GP.successBack(res)
-                    wx.showToast({
-                        title:"登陆成功",
-                    })
+                    // wx.showToast({
+                    //     title:"登陆成功",
+                    // })
                 },
                 fail: function (res) {
                     console.log(res)

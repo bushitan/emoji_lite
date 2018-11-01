@@ -61,14 +61,6 @@ Component({
                 canvas.setFillStyle('white')
                 canvas.fillRect(0, 0, _width + this.data.borderSize, _height + this.data.logoHeight)
 
-                wx.saveFile({
-                    tempFilePath: tempImage,
-                    success(res) {
-                        const savedFilePath = res.savedFilePath
-                        console.log("save:",res)
-                    }
-                })
-
                 canvas.drawImage(
                     newVal,
                     this.data.borderSize / 2, //画图要预留边框空白
@@ -140,10 +132,12 @@ Component({
             var _border = this.data.borderSize
 
             canvas.setFillStyle("#000000")
-            canvas.setFontSize(11)
             // canvas.fillText('2018.10.17', (_width + _border) / 2 - 30, _height + 30)
             // canvas.drawImage('../../images/qr.jpg', (_width + _border) - 70, _height + 40, 60, 60)
-            canvas.fillText('我在江湖  |  致敬金庸', 10, _height + 30)
+            canvas.setFontSize(22)
+            canvas.fillText('飞雪连天射白鹿，笑书侠倚碧鸳', 10, _height + 40)
+            canvas.setFontSize(11)
+            canvas.fillText('我在江湖  |  致敬金庸', 10, _height + 70)
             canvas.drawImage('../../images/qr.jpg', (_width + _border) - 70, _height +20, 60, 60)
             // ctx.fillText('MINA', 100, 100)
         },

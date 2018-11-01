@@ -9,7 +9,7 @@
 // var host_url = 'https://www.12xiong.top/emoji/';
 
 // var host_url = 'http://192.168.200.103:8000/hemoji/';
-// var host_url = 'http://127.0.0.1:8000/emoji/';
+// var host_url = 'http://127.0.0.1:8001/emoji/';
 var host_url = 'https://www.12xiong.top/emoji/';
 // var host_url = 'https://xcx.308308.com/hemoji/';
 
@@ -58,6 +58,9 @@ module.exports = {
     WX_CALLBACK: host_url + 'lite/wx/callback/',
 
     IMAGE_GET_LIST: host_url + 'lite/image/get_list/',
+
+    // UPLOAD_GET_TOKEN: host_url + 'lite/image/get_list/',
+    UPLOAD_GET_TOKEN: host_url + 'lite/upload/get/token/',
 
 };
 

@@ -2,6 +2,7 @@
 
 var API = require('../../utils/api.js');
 var Base64 = require('../../utils/image_base.js');
+var QINIU = require('../../utils/qiniu.js');
 var APP = getApp()
 
 var GP
@@ -222,6 +223,7 @@ Page({
                 tempList[GP.data.templateIndex].cache = mixImage
                 GP.setData({
                     mixResult: mixImage,
+                    mixBase64: obj.result,
                     list: tempList,
                 })
             },
@@ -268,6 +270,8 @@ Page({
     },
     //下载图片
     clickDown(){
+        
+
         if (GP.data.mixResult == "../../images/click.jpg"){
             wx.showModal({
                 title: '请先上传头像',
@@ -275,9 +279,20 @@ Page({
             })
             return 
         }
-        wx.previewImage({
-            urls: [GP.data.mixResult],
+
+        wx.showToast({
+            title: '下载中...',
+            icon: 'loading',
+            duration:500,
         })
+        //获取token
+        
+        // QINIU.UploadFile(GP, Base64.dongfbb) //测试
+        QINIU.UploadFile(GP, GP.data.mixResult)  //在线
+
+        // wx.previewImage({
+        //     urls: [GP.data.mixResult],
+        // })
 
 
         // GP.setData({
@@ -292,6 +307,32 @@ Page({
         //     })
         // } ,500)
     },
+    uploadSuccessAction(res){
+        console.log(res.data)
+        var name = res.data.key
+
+        wx.downloadFile({
+            url: 'https://www.12xiong.top/emoji/img/' + name, //仅为示例，并非真实的资源
+            success(res) {
+                // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+                // if (res.statusCode === 200) {
+                //     wx.playVoice({
+                //         filePath: res.tempFilePath
+                //     })
+                GP.setData({
+                    makeLandmark: res.tempFilePath,
+                    width: GP.data.list[GP.data.templateIndex].width,
+                    height: GP.data.list[GP.data.templateIndex].height,
+                })
+            },
+            fail:function(res){
+                console.log(res)
+            },
+        })
+
+        // GP.data.mixBase64
+    },
+
 
     shang(){
         API.Request({
